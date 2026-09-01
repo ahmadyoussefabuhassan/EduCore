@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sorc", "sorc", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{824B01FF-BC10-4EBA-9F9D-9CCEBB233DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduCore.Domain", "EduCore.Domain\EduCore.Domain.csproj", "{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {201D2707-B23A-4777-A710-D6BD57E94D83}
+	EndGlobalSection
+EndGlobal
