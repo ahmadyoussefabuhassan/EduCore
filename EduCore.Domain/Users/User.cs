@@ -45,22 +45,26 @@ namespace EduCore.Domain.Users
             return user;
         }
         public void UpdateUser(FirstName firstName , LastName lastName 
-            ,Email email ,Genders gender ,
+            ,Email email ,PhoneNumber phoneNumber,Genders gender ,
             Address address , ImageUrl? imageUrl)
         {
             FirstName = firstName;
             LastName = lastName;
             FullName = new FullName(firstName, lastName);
             Email = email;
+            PhoneNumber = phoneNumber;
             Gender = gender;
             Address = address;
             ImageUrl = imageUrl;
+            RaiseDomainEvent(new UserUpdatedDomainEvent(Id, FullName, Email, PhoneNumber));
         }
         public void UpdatePasswords(PasswordHash newpasswordHash)
         {
             if(PasswordHash == newpasswordHash)
                 return;
             PasswordHash = newpasswordHash;
+            RaiseDomainEvent(new UserUpdatedPasswordDomainEvent(Id, FullName, Email, PhoneNumber));
+
         }
         
 

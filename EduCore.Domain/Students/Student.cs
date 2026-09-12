@@ -20,6 +20,15 @@ namespace EduCore.Domain.Students
             return student;
         }
         public void InActiveStudent()
-            => Status = StudentStatus.InActived;
+        {
+            Status = StudentStatus.InActived;
+            RaiseDomainEvent(new Events.StudentInActiveDomainEvent(Id, Status));
+        }
+        public void ActiveStudent()
+        {
+            Status = StudentStatus.Active;
+            RaiseDomainEvent(new Events.StudentActiveDomainEvent(Id, Status));
+        }
+
     }
 }
