@@ -2,7 +2,7 @@
 {
     public sealed record CertificateNumber
     {
-        public string Value {  get; private set; }
+        public string Value { get; private set; }
         private CertificateNumber(string value)
             => Value = value;
         public static CertificateNumber Generate()

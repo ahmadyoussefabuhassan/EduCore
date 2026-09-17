@@ -1,7 +1,7 @@
 ﻿namespace EduCore.Domain.Roles
 {
     public sealed record IsSystemRole
-    { 
+    {
         public bool Value { get; init; }
         public static readonly IsSystemRole Yes = new IsSystemRole(true);
         public static readonly IsSystemRole No = new IsSystemRole(false);

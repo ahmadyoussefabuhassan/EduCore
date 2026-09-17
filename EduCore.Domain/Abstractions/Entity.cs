@@ -22,7 +22,7 @@
         }
         public override int GetHashCode()
         {
-            if(this.Id != default)
+            if (this.Id != default)
                 return Id.GetHashCode() ^ 31;
             return base.GetHashCode();
 

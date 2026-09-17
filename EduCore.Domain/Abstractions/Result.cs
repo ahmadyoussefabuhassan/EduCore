@@ -28,7 +28,7 @@ namespace EduCore.Domain.Abstractions
     {
         public T? _value;
         protected internal Result(T value, bool isSuccess, Error error)
-            : base(isSuccess, error) 
+            : base(isSuccess, error)
             => _value = value;
         [NotNull]
         public T Value => IsSuccess ? _value! :

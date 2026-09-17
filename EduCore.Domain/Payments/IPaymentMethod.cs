@@ -2,7 +2,7 @@
 {
     public interface IPaymentMethod
     {
-         string Method { get;  }
-         bool RequiresAttachment { get; }
+        string Method { get; }
+        bool RequiresAttachment { get; }
     }
 }

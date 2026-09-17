@@ -21,7 +21,7 @@ namespace EduCore.Domain.Students
 
         public static Student Create(Guid UserId)
         {
-            var student = new Student(UserId , StudentStatus.Active);
+            var student = new Student(UserId, StudentStatus.Active);
             return student;
         }
         public void InActiveStudent()

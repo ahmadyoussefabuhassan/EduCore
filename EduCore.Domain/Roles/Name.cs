@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace EduCore.Domain.Roles
+﻿namespace EduCore.Domain.Roles
 {
     public sealed record Name
     {
@@ -15,7 +13,7 @@ namespace EduCore.Domain.Roles
         }
         public Name(string value)
         {
-            if(string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException("Role name cannot be empty.");
             Value = value;
         }

@@ -61,7 +61,7 @@ namespace EduCore.Domain.Courses
         }
         public Result Publish()
         {
-            if(Status == CourseStatus.Upcoming)
+            if (Status == CourseStatus.Upcoming)
                 return Result.Failure(CourseErrors.CourseAlreadyPublished);
             Status = CourseStatus.Upcoming;
             RaiseDomainEvent(new CoursePublishedDomainEvent(Id));
@@ -69,7 +69,7 @@ namespace EduCore.Domain.Courses
         }
         public Result Activate()
         {
-            if(DateRange is null || !DateRange.IsComplete())
+            if (DateRange is null || !DateRange.IsComplete())
                 return Result.Failure(CourseErrors.DateRangeRequiredForStatus);
             if (Status == CourseStatus.Active)
                 return Result.Failure(CourseErrors.StatusAlreadyMatched);
@@ -89,7 +89,7 @@ namespace EduCore.Domain.Courses
         }
         public Result Cancel()
         {
-            if(Status == CourseStatus.Cancelled)
+            if (Status == CourseStatus.Cancelled)
                 return Result.Failure(CourseErrors.StatusAlreadyMatched);
             Status = CourseStatus.Cancelled;
             RaiseDomainEvent(new CourseCancelledDomainEvent(Id));

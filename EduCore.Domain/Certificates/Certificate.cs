@@ -6,7 +6,7 @@ namespace EduCore.Domain.Certificates
 {
     public sealed class Certificate : Entity
     {
-        private Certificate(Guid Id, CertificateNumber certificateNumber,  CertificateUrl certificateUrl, Guid enrollmentId) : base(Id)
+        private Certificate(Guid Id, CertificateNumber certificateNumber, CertificateUrl certificateUrl, Guid enrollmentId) : base(Id)
         {
             CertificateNumber = certificateNumber;
             IssueDate = DateTime.UtcNow;
@@ -18,7 +18,7 @@ namespace EduCore.Domain.Certificates
         public CertificateUrl CertificateUrl { get; private set; }
         public Guid EnrollmentId { get; private set; }
         public Enrollment Enrollment { get; private set; } = null!;
-        public static Certificate Create(CertificateNumber certificateNumber , CertificateUrl certificateUrl , Guid enrollmentId)
+        public static Certificate Create(CertificateNumber certificateNumber, CertificateUrl certificateUrl, Guid enrollmentId)
         {
             var certificate = new Certificate(Guid.NewGuid(), certificateNumber, certificateUrl, enrollmentId);
             certificate.RaiseDomainEvent(new CertificateCreatedDomainEvent(certificate.Id));

@@ -16,7 +16,7 @@
         }
         public static bool operator >(Money first, Money second)
         {
-           if (first.Currency != second.Currency) throw new InvalidOperationException("Currencies must match.");
+            if (first.Currency != second.Currency) throw new InvalidOperationException("Currencies must match.");
             return first.Amount > second.Amount;
         }
         public static bool operator <(Money first, Money second)
@@ -24,9 +24,9 @@
             if (first.Currency != second.Currency) throw new InvalidOperationException("Currencies must match.");
             return first.Amount < second.Amount;
         }
-        public static bool operator >=(Money first, Money second) 
+        public static bool operator >=(Money first, Money second)
             => first == second || first > second;
-        public static bool operator <=(Money first, Money second) 
+        public static bool operator <=(Money first, Money second)
             => first == second || first < second;
         public static Money Zero(Currency currency) => new Money(0, currency);
         public bool IsZero() => Amount == 0;

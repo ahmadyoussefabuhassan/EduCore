@@ -8,7 +8,7 @@ namespace EduCore.Domain.Wallets
 {
     public sealed class Wallet : Entity
     {
-        private Wallet(Guid Id, Currency currency,  Guid userId) : base(Id)
+        private Wallet(Guid Id, Currency currency, Guid userId) : base(Id)
         {
             Balance = Money.Zero(currency);
             IsActive = true;
@@ -29,9 +29,9 @@ namespace EduCore.Domain.Wallets
         }
         public Result Deposit(Money amount)
         {
-            if(!IsActive)
+            if (!IsActive)
                 return Result.Failure(WalletErrors.WalletIsInactive);
-            if(amount.IsZero() || amount.Amount < 0)
+            if (amount.IsZero() || amount.Amount < 0)
                 return Result.Failure(WalletErrors.InvalidAmount);
             Balance = Balance + amount;
             UpdatedAt = DateTime.UtcNow;
@@ -44,7 +44,7 @@ namespace EduCore.Domain.Wallets
                 return Result.Failure(WalletErrors.WalletIsInactive);
             if (amount.IsZero() || amount.Amount < 0)
                 return Result.Failure(WalletErrors.InvalidAmount);
-            if(Balance < amount)
+            if (Balance < amount)
                 return Result.Failure(WalletErrors.InsufficientBalance);
             Balance = Balance - amount;
             UpdatedAt = DateTime.UtcNow;

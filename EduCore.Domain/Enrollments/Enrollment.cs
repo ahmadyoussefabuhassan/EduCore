@@ -10,7 +10,7 @@ namespace EduCore.Domain.Enrollments
     public sealed class Enrollment : Entity
     {
 
-        private Enrollment(Guid Id, EnrollmentStatus status,  Guid studentId, Guid courseId) : base(Id)
+        private Enrollment(Guid Id, EnrollmentStatus status, Guid studentId, Guid courseId) : base(Id)
         {
             Status = status;
             EnrollmentDate = DateTime.UtcNow;
@@ -25,7 +25,7 @@ namespace EduCore.Domain.Enrollments
         public Course Course { get; private set; } = null!;
         public Certificate? Certificate { get; private set; }
         public ICollection<Payment> Payments { get; private set; } = new List<Payment>();
-        public static Enrollment Create( Guid studentId, Guid courseId)
+        public static Enrollment Create(Guid studentId, Guid courseId)
         {
             var enrollment = new Enrollment(Guid.NewGuid(), EnrollmentStatus.Pending, studentId, courseId);
             enrollment.RaiseDomainEvent(new EnrollmentCreatedDomainEvent(enrollment.Id));
@@ -33,7 +33,7 @@ namespace EduCore.Domain.Enrollments
         }
         public Result Activate()
         {
-            if(Status != EnrollmentStatus.Pending)
+            if (Status != EnrollmentStatus.Pending)
                 return Result.Failure(EnrollmentErrors.NotPending);
             Status = EnrollmentStatus.Active;
             RaiseDomainEvent(new EnrollmentActivatedDomainEvent(Id));

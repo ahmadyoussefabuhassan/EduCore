@@ -2,7 +2,7 @@
 {
     public sealed record Currency
     {
-        public string Code { get;init; }
+        public string Code { get; init; }
         private Currency(string code) => Code = code;
         public static readonly Currency NONE = new Currency("");
         public static readonly Currency USD = new Currency("USD");
@@ -21,7 +21,7 @@
                 throw new ArgumentException($"Currency code '{code}' is not supported.");
             return currency;
         }
-  
+
 
 
     }

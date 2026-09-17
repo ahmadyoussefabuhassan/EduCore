@@ -15,10 +15,10 @@ namespace EduCore.Domain.Instructors
         public ICollection<Course> Courses { get; private set; } = new List<Course>();
         public static Instructor Create(Guid UserId, Specialization specialization)
         {
-            var instructor = new Instructor(UserId , specialization);
+            var instructor = new Instructor(UserId, specialization);
             instructor.RaiseDomainEvent(new Events.InstructorCreatedDomainEvent(instructor.Id, instructor.Specialization));
             return instructor;
-        } 
+        }
         public void UpdateInstructor(Specialization specialization)
         {
             Specialization = specialization;

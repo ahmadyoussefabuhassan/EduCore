@@ -17,12 +17,12 @@ namespace EduCore.Domain.Roles
         public ICollection<User> Users { get; private set; } = new List<User>();
         public static Role CreateSystemRole(Name name)
         {
-            var role = new Role(Guid.NewGuid(), name , DisplayName.GetDefault(name) , IsSystemRole.Yes);
+            var role = new Role(Guid.NewGuid(), name, DisplayName.GetDefault(name), IsSystemRole.Yes);
             return role;
         }
         public static Role CreateCustomRole(Name name)
         {
-            var role  = new Role(Guid.NewGuid(), name , DisplayName.GetDefault(name) , IsSystemRole.No);
+            var role = new Role(Guid.NewGuid(), name, DisplayName.GetDefault(name), IsSystemRole.No);
             return role;
         }
 
