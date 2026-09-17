@@ -5,9 +5,6 @@ namespace EduCore.Domain.Notifications
 {
     public sealed class Notification : Entity
     {
-        private Notification() : base(Guid.Empty)
-        {
-        }
         private Notification(Guid Id, Title title, Message message, bool isRead, DateTime createdAt, Guid userId) : base(Id)
         {
             Title = title;

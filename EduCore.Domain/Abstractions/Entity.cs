@@ -6,6 +6,7 @@
         public Guid Id { get; protected set; }
         protected Entity(Guid Id)
             => this.Id = Id;
+        private Entity() : this(Guid.Empty) { }
         public IReadOnlyList<IDomainEvent> GetDomainEvents() => _events.ToList();
         public void ClearDomainEvents() => _events.Clear();
         protected void RaiseDomainEvent(IDomainEvent domainEvent) => _events.Add(domainEvent);

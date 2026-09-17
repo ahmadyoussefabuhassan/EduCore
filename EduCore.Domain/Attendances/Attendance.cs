@@ -1,4 +1,5 @@
 ﻿using EduCore.Domain.Abstractions;
+using EduCore.Domain.Attendances.Events;
 using EduCore.Domain.Sessions;
 using EduCore.Domain.Students;
 
@@ -6,9 +7,6 @@ namespace EduCore.Domain.Attendances
 {
     public sealed class Attendance : Entity
     {
-        private Attendance() : base(Guid.Empty)
-        {
-        }
         private Attendance(Guid Id, AttendanceStatus status, Remarks? remarks, Guid studentId, Guid sessionId) : base(Id)
         {
             Status = status;
@@ -25,6 +23,7 @@ namespace EduCore.Domain.Attendances
         public static Attendance Create(AttendanceStatus status, Remarks? remarks, Guid studentId, Guid sessionId)
         {
             var attendance = new Attendance(Guid.NewGuid(), status, remarks, studentId, sessionId);
+            attendance.RaiseDomainEvent(new AttendanceCreatedDomainEvent(attendance.Id));
             return attendance;
         }
 

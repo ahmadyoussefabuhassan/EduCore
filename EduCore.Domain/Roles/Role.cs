@@ -5,7 +5,6 @@ namespace EduCore.Domain.Roles
 {
     public sealed class Role : Entity
     {
-        private Role() : base(Guid.Empty) { }
         private Role(Guid Id, Name name, DisplayName displayName, IsSystemRole isSystemRole) : base(Id)
         {
             Name = name;

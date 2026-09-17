@@ -10,11 +10,4 @@
     <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Certificates\" />
-    <Folder Include="Enrollments\Events\" />
-    <Folder Include="Payments\" />
-    <Folder Include="Sessions\Events\" />
-  </ItemGroup>
-
 </Project>

@@ -10,9 +10,6 @@ namespace EduCore.Domain.Courses
 {
     public sealed class Course : Entity
     {
-        private Course() : base(Guid.Empty)
-        {
-        }
         private Course(Guid Id, CourseName name, Description description, CourseStatus status, TotalHours totalHours, MaximumStudents maximumStudents, Money price, DateRange? dateRange, Guid categoryId, Guid instructorId) : base(Id)
         {
             Name = name;
@@ -64,28 +61,36 @@ namespace EduCore.Domain.Courses
         }
         public Result Publish()
         {
+            if(Status == CourseStatus.Upcoming)
+                return Result.Failure(CourseErrors.CourseAlreadyPublished);
             Status = CourseStatus.Upcoming;
             RaiseDomainEvent(new CoursePublishedDomainEvent(Id));
             return Result.Success();
         }
         public Result Activate()
         {
-            if(DateRange is null && !DateRange.IsComplete())
+            if(DateRange is null || !DateRange.IsComplete())
                 return Result.Failure(CourseErrors.DateRangeRequiredForStatus);
+            if (Status == CourseStatus.Active)
+                return Result.Failure(CourseErrors.StatusAlreadyMatched);
             Status = CourseStatus.Active;
             RaiseDomainEvent(new CourseActivatedDomainEvent(Id));
             return Result.Success();
         }
         public Result Complete()
         {
-            if (DateRange is null && !DateRange.IsComplete())
+            if (DateRange is null || !DateRange.IsComplete())
                 return Result.Failure(CourseErrors.DateRangeRequiredForStatus);
+            if (Status == CourseStatus.Completed)
+                return Result.Failure(CourseErrors.StatusAlreadyMatched);
             Status = CourseStatus.Completed;
             RaiseDomainEvent(new CourseCompletedDomainEvent(Id));
             return Result.Success();
         }
         public Result Cancel()
         {
+            if(Status == CourseStatus.Cancelled)
+                return Result.Failure(CourseErrors.StatusAlreadyMatched);
             Status = CourseStatus.Cancelled;
             RaiseDomainEvent(new CourseCancelledDomainEvent(Id));
             return Result.Success();

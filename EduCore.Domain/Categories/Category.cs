@@ -6,9 +6,6 @@ namespace EduCore.Domain.Categories
 {
     public sealed class Category : Entity
     {
-        private Category() : base(Guid.Empty)
-        {
-        }
         private Category(Guid Id, CategoryName name) : base(Id)
         {
             Name = name;

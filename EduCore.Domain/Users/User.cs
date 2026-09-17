@@ -1,14 +1,15 @@
 ﻿using EduCore.Domain.Abstractions;
+using EduCore.Domain.Notifications;
+using EduCore.Domain.Payments;
 using EduCore.Domain.Roles;
 using EduCore.Domain.Users.Events;
+using EduCore.Domain.Transactions;
+using EduCore.Domain.Wallets;
 
 namespace EduCore.Domain.Users
 {
     public class User : Entity
     {
-        private User() : base(Guid.Empty) 
-        {
-        }
         private User(Guid Id, FirstName firstName, LastName lastName, Email email, PasswordHash passwordHash,PhoneNumber phoneNumber, Genders gender, Address address, ImageUrl? imageUrl, Guid roleId) : base(Id)
         {
             FirstName = firstName;
@@ -35,6 +36,10 @@ namespace EduCore.Domain.Users
         public DateTime CreatedAt { get; private set; }
         public Guid RoleId { get; private set; }
         public Role Role { get; private set; } = null!;
+        public Wallet? Wallet { get; private set; } 
+        public ICollection<Notification> Notifications { get; private set; } = new List<Notification>();
+        public ICollection<Payment> Payments { get; private set; } = new List<Payment>();
+        public ICollection<Transaction> Transactions { get; private set; } = new List<Transaction>();
         public static User Create(FirstName firstName, LastName lastName,
             Email email , PasswordHash passwordHash , PhoneNumber phoneNumber ,
             Genders gender ,Address address, 
