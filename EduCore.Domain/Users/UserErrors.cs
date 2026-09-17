@@ -5,7 +5,7 @@ namespace EduCore.Domain.Users
     public static class UserErrors
     {
         public static readonly Error NotFound = new(
-  "User.NotFound", "المستخدم المطلوب غير موجود في النظام");
+            "User.NotFound", "المستخدم المطلوب غير موجود في النظام");
 
         public static readonly Error EmailAlreadyExists = new(
             "User.EmailAlreadyExists", "البريد الإلكتروني هذا مستخدم بالفعل من قبل حساب آخر");
