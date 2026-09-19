@@ -1,6 +1,6 @@
 ﻿namespace EduCore.Domain.Abstractions
 {
-    public class GetAllDataResponse<T> where T : class, new()
+    public class GetAllDataResponse<T> 
     {
         public int PageNumber { get; set; }
         public int TotalPage { get; set; }
