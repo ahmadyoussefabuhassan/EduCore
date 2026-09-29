@@ -20,4 +20,38 @@
     <ProjectReference Include="..\EduCore.Domain\EduCore.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Attendances\Commands\" />
+    <Folder Include="Attendances\Events\" />
+    <Folder Include="Attendances\Queries\" />
+    <Folder Include="Categories\Commands\" />
+    <Folder Include="Categories\Events\" />
+    <Folder Include="Categories\Queries\" />
+    <Folder Include="Certificates\Commands\" />
+    <Folder Include="Certificates\Events\" />
+    <Folder Include="Certificates\Queries\" />
+    <Folder Include="Courses\Commands\" />
+    <Folder Include="Courses\Events\" />
+    <Folder Include="Courses\Queries\" />
+    <Folder Include="Enrollments\Commands\" />
+    <Folder Include="Enrollments\Events\" />
+    <Folder Include="Enrollments\Queries\" />
+    <Folder Include="Instructors\Events\" />
+    <Folder Include="Instructors\Queries\" />
+    <Folder Include="Users\" />
+    <Folder Include="Payments\Commands\" />
+    <Folder Include="Payments\Events\" />
+    <Folder Include="Payments\Queries\" />
+    <Folder Include="Sessions\Commands\" />
+    <Folder Include="Sessions\Events\" />
+    <Folder Include="Sessions\Queries\" />
+    <Folder Include="Students\Commands\" />
+    <Folder Include="Students\Events\" />
+    <Folder Include="Students\Queries\" />
+    <Folder Include="Roles\" />
+    <Folder Include="Wallets\Commands\" />
+    <Folder Include="Wallets\Events\" />
+    <Folder Include="Wallets\Queries\" />
+  </ItemGroup>
+
 </Project>

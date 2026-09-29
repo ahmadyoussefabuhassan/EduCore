@@ -10,7 +10,7 @@ namespace EduCore.Domain.Users
 {
     public class User : Entity
     {
-        private User(Guid Id, FirstName firstName, LastName lastName, Email email, PasswordHash passwordHash, PhoneNumber phoneNumber, Genders gender, Address address, ImageUrl? imageUrl, Guid roleId) : base(Id)
+        private User(Guid Id, FirstName firstName, LastName lastName, Email email, PasswordHash passwordHash, PhoneNumber phoneNumber,  Address address, Guid roleId) : base(Id)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -18,9 +18,9 @@ namespace EduCore.Domain.Users
             Email = email;
             PasswordHash = passwordHash;
             PhoneNumber = phoneNumber;
-            Gender = gender;
+            Gender = Genders.Other;
             Address = address;
-            ImageUrl = imageUrl;
+            ImageUrl = null;
             CreatedAt = DateTime.UtcNow;
             RoleId = roleId;
         }
@@ -41,15 +41,16 @@ namespace EduCore.Domain.Users
         public ICollection<Payment> Payments { get; private set; } = new List<Payment>();
         public ICollection<Transaction> Transactions { get; private set; } = new List<Transaction>();
         public static User Create(FirstName firstName, LastName lastName,
-            Email email, PasswordHash passwordHash, PhoneNumber phoneNumber,
-            Genders gender, Address address,
-            ImageUrl? imageUrl, Guid roleId)
+            Email email, PasswordHash passwordHash,
+            PhoneNumber phoneNumber,
+             Address address,
+             Guid roleId)
         {
-            var user = new User(Guid.NewGuid(), firstName, lastName, email, passwordHash, phoneNumber, gender, address, imageUrl, roleId);
+            var user = new User(Guid.NewGuid(), firstName, lastName, email, passwordHash, phoneNumber, address,  roleId);
             user.RaiseDomainEvent(new UserCreatedDomainEvent(user.Id, user.FullName, user.Email, user.PhoneNumber));
             return user;
         }
-        public void UpdateUser(FirstName firstName, LastName lastName
+        public void UpdateProfileUser(FirstName firstName, LastName lastName
             , Email email, PhoneNumber phoneNumber, Genders gender,
             Address address, ImageUrl? imageUrl)
         {
