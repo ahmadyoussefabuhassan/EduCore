@@ -37,17 +37,13 @@
     <Folder Include="Enrollments\Events\" />
     <Folder Include="Enrollments\Queries\" />
     <Folder Include="Instructors\Events\" />
-    <Folder Include="Instructors\Queries\" />
-    <Folder Include="Users\" />
     <Folder Include="Payments\Commands\" />
     <Folder Include="Payments\Events\" />
     <Folder Include="Payments\Queries\" />
     <Folder Include="Sessions\Commands\" />
     <Folder Include="Sessions\Events\" />
     <Folder Include="Sessions\Queries\" />
-    <Folder Include="Students\Commands\" />
     <Folder Include="Students\Events\" />
-    <Folder Include="Students\Queries\" />
     <Folder Include="Roles\" />
     <Folder Include="Wallets\Commands\" />
     <Folder Include="Wallets\Events\" />

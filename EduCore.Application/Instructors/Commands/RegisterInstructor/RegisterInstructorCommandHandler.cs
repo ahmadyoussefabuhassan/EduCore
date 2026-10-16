@@ -30,7 +30,7 @@ namespace EduCore.Application.Instructors.Commands.RegisterInstructor
 
         public async Task<Result> Handle(RegisterInstructorCommand request, CancellationToken cancellationToken)
         {
-            var role = await _roleRepository.GetByNameAsync(Name.Admin, cancellationToken);
+            var role = await _roleRepository.GetByNameAsync(Name.Instructor, cancellationToken);
             if (role is null)
                 return Result.Failure(RoleErrors.NotFound);
             var existingUser = await _userRepository.GetByEmailAsync(new Email(request.Email), cancellationToken);

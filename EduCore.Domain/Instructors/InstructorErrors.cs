@@ -11,5 +11,8 @@ namespace EduCore.Domain.Instructors
         public static readonly Error SpecializationRequired = new Error(
             "Instructor.SpecializationRequired",
             "تخصص المدرب حقل إلزامي.");
+        public static readonly Error HasRelatedData = new Error(
+            "Instructor.HasRelatedData",
+            "لا يمكن حذف المدرب لأنه مرتبط ببيانات أخرى.");
     }
 }
