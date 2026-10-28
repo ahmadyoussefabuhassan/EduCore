@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduCore.Domain", "EduCore.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduCore.Application", "EduCore.Application\EduCore.Application.csproj", "{DC42AC10-8E59-42E1-9804-68776FDC810B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduCore.Infrastructure", "EduCore.Infrastructure\EduCore.Infrastructure.csproj", "{68E87640-9264-470B-A706-B3D0C1C56153}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{DC42AC10-8E59-42E1-9804-68776FDC810B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC42AC10-8E59-42E1-9804-68776FDC810B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC42AC10-8E59-42E1-9804-68776FDC810B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E87640-9264-470B-A706-B3D0C1C56153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E87640-9264-470B-A706-B3D0C1C56153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E87640-9264-470B-A706-B3D0C1C56153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E87640-9264-470B-A706-B3D0C1C56153}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CCFEB7F6-9E49-4C5C-9CDF-4A84000BD05F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{DC42AC10-8E59-42E1-9804-68776FDC810B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{68E87640-9264-470B-A706-B3D0C1C56153} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {201D2707-B23A-4777-A710-D6BD57E94D83}
