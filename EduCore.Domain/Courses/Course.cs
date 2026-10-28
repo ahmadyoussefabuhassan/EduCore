@@ -41,11 +41,12 @@ namespace EduCore.Domain.Courses
             course.RaiseDomainEvent(new CourseCreatedDomainEvent(course.Id));
             return course;
         }
-        public void UpdateDetails(CourseName name, Description description, MaximumStudents maximumStudents)
+        public void UpdateDetails(CourseName name, Description description, MaximumStudents maximumStudents , Guid categoryId)
         {
             Name = name;
             Description = description;
             MaximumStudents = maximumStudents;
+            CategoryId = categoryId;
         }
         public Result UpdatePrice(Money price)
         {

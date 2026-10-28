@@ -12,6 +12,8 @@
 
             if (startDate.HasValue && endDate.HasValue && endDate < startDate)
                 throw new ApplicationException("End date cannot be earlier than start date.");
+            if (endDate.HasValue && !startDate.HasValue)
+                throw new ApplicationException("Cannot have an end date without a start date.");
             return new DateRange { StartDate = startDate, EndDate = endDate };
         }
         public bool IsComplete() => StartDate.HasValue && EndDate.HasValue;

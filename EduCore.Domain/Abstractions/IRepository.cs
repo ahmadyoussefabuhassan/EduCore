@@ -8,7 +8,7 @@
         IQueryable<TEntity> GetAllQueryable(CancellationToken cancellationToken = default);
         Task AddAsync(TEntity entity, CancellationToken cancellationToken = default);
         Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
-        Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default);
-        void Delete(TEntity entity);
+        Task DeleteAsync(Guid Id, CancellationToken cancellationToken = default);
+        void Delete(Guid Id);
     }
 }

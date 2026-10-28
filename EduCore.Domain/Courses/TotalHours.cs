@@ -2,8 +2,8 @@
 {
     public sealed record TotalHours
     {
-        public int Value { get; init; }
-        public TotalHours(int value)
+        public short Value { get; init; }
+        public TotalHours(short value)
         {
             if (value <= 0)
                 throw new ArgumentException("Total hours cannot be negative.", nameof(value));

@@ -24,15 +24,12 @@
     <Folder Include="Attendances\Commands\" />
     <Folder Include="Attendances\Events\" />
     <Folder Include="Attendances\Queries\" />
-    <Folder Include="Categories\Commands\" />
     <Folder Include="Categories\Events\" />
-    <Folder Include="Categories\Queries\" />
     <Folder Include="Certificates\Commands\" />
     <Folder Include="Certificates\Events\" />
     <Folder Include="Certificates\Queries\" />
-    <Folder Include="Courses\Commands\" />
     <Folder Include="Courses\Events\" />
-    <Folder Include="Courses\Queries\" />
+    <Folder Include="Courses\Queries\GetAllCourse\" />
     <Folder Include="Enrollments\Commands\" />
     <Folder Include="Enrollments\Events\" />
     <Folder Include="Enrollments\Queries\" />
